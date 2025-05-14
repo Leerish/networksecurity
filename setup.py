@@ -8,7 +8,7 @@ from typing import List
 def get_requirements() -> List[str]:
     
     """
-    Function returns list as requirements 
+    Function returns requirements  as list 
     """
     req_list:List[str] =[]
     try:
@@ -18,7 +18,7 @@ def get_requirements() -> List[str]:
             # Process each line 
             for line in lines:
                 req = line.strip()
-                # Ignore the empty lines and -e.
+                # Ignore the empty lines and -e. ; -e. refers setup.py for creating metadata
                 if req and req!= '-e .':
                     req_list.append(req)
     except FileNotFoundError:
@@ -35,4 +35,4 @@ setup(
     author_email = "arvindleerish@gmail.com",
     packages = find_packages(),
     install_requires = get_requirements()
-)
+) 
